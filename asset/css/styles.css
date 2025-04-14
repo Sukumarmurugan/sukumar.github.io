@@ -1,0 +1,79 @@
+/* Basic styles for the layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.l-header {
+    background-color: #2c3e50;
+    padding: 1rem;
+}
+
+.nav__logo {
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav__link {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.home__title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.home__social {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.home__social-icon {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+.button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 0.7rem 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: inline-block;
+}
+
+.contact__input {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Add other custom styles as necessary */
