@@ -3,6 +3,9 @@
   --text: #fff;
   --accent: #00c3ff;
   --hover: #00ffee;
+  --input-bg: #222;
+  --border-radius: 5px;
+  --font-family: 'Segoe UI', sans-serif;
 }
 
 * {
@@ -12,8 +15,8 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: var(--bg);
+  font-family: var(--font-family);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), var(--bg);
   color: var(--text);
   line-height: 1.6;
   padding: 20px;
@@ -21,20 +24,31 @@ body {
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-header h2 {
+.typing-animation {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
+  animation: typing 2.5s steps(40) 1s forwards, blink 0.75s step-end infinite;
 }
 
-header p {
-  margin-bottom: 20px;
-  font-size: 1rem;
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }
 
 .actions {
@@ -47,9 +61,14 @@ header p {
   padding: 10px 15px;
   background: var(--accent);
   color: var(--bg);
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   text-decoration: none;
   font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.actions a:hover {
+  background: var(--hover);
 }
 
 nav {
@@ -73,34 +92,6 @@ nav a {
   box-shadow: 0 0 30px rgba(0, 195, 255, 0.2);
 }
 
-.cloud-section.hidden {
-  opacity: 0;
-  transform: translateY(30px);
-  pointer-events: none;
-  transition: all 0.8s ease-in-out;
-}
-
-.cloud-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.cloud-section h3 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-.cloud-section ul {
-  list-style: none;
-}
-
-.cloud-section li {
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-
 #contact form {
   max-width: 500px;
   margin: 0 auto;
@@ -111,8 +102,8 @@ nav a {
   margin-bottom: 15px;
   padding: 10px;
   border: none;
-  border-radius: 5px;
-  background: #222;
+  border-radius: var(--border-radius);
+  background: var(--input-bg);
   color: var(--text);
 }
 
@@ -124,10 +115,11 @@ form button {
   padding: 10px 20px;
   background-color: var(--accent);
   border: none;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   font-weight: 600;
   color: var(--bg);
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 form button:hover {
@@ -138,4 +130,48 @@ footer {
   margin-top: 40px;
   font-size: 0.85rem;
   color: #aaa;
+}
+
+/* Logos Animation */
+.logos {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.logo {
+  width: 50px;
+  margin: 10px;
+  animation: moveLogo 10s linear infinite;
+}
+
+@keyframes moveLogo {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .actions a {
+    display: block;
+    margin: 10px auto;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  #contact form {
+    padding: 20px;
+  }
 }
