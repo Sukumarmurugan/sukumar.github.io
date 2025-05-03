@@ -33,13 +33,15 @@ header h1 {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
-  animation: typing 2.5s steps(40) 1s forwards, blink 0.75s step-end infinite;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  border-right: 2px solid var(--text);
+  animation: typing 3s steps(40) 1s forwards, blink 0.75s step-end infinite;
 }
 
 @keyframes typing {
-  from {
-    width: 0;
-  }
   to {
     width: 100%;
   }
