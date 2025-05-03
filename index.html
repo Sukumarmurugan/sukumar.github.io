@@ -10,9 +10,23 @@
 
   <header>
     <h1>Hello, I'm Sukumar Murugan</h1>
-    <h2>AWS Cloud Engineer | DevOps Enthusiast</h2>
+    <h2 class="typing-animation">AWS Cloud Engineer | DevOps Enthusiast</h2>
     <p>🚀 Passionate about building scalable, secure cloud solutions and automation workflows in AWS.</p>
-    
+
+    <!-- Logos Section -->
+    <div class="logos">
+      <img src="icons/aws.png" alt="AWS" class="logo" />
+      <img src="icons/terraform.png" alt="Terraform" class="logo" />
+      <img src="icons/docker.png" alt="Docker" class="logo" />
+      <img src="icons/python.png" alt="Python" class="logo" />
+      <img src="icons/prometheus.png" alt="Prometheus" class="logo" />
+      <img src="icons/grafana.png" alt="Grafana" class="logo" />
+      <img src="icons/jenkins.png" alt="Jenkins" class="logo" />
+      <img src="icons/git.png" alt="Git" class="logo" />
+      <img src="icons/github.png" alt="GitHub" class="logo" />
+      <img src="icons/linux.png" alt="Linux" class="logo" />
+    </div>
+
     <div class="actions">
       <a href="resume.pdf" download class="resume-btn">📄 Download My Resume</a>
       <a href="https://github.com/Sukumarmurugan" target="_blank">🐱 GitHub</a>
@@ -60,29 +74,6 @@
     © 2025 Sukumar Murugan | All Rights Reserved
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const links = document.querySelectorAll('.nav-link');
-      const sections = document.querySelectorAll('.cloud-section');
-
-      links.forEach(link => {
-        link.addEventListener('click', e => {
-          e.preventDefault();
-
-          sections.forEach(sec => {
-            sec.classList.remove('visible');
-            sec.classList.add('hidden');
-          });
-
-          const targetId = link.getAttribute('href');
-          const targetSection = document.querySelector(targetId);
-          targetSection.classList.remove('hidden');
-          targetSection.classList.add('visible');
-
-          targetSection.scrollIntoView({ behavior: 'smooth' });
-        });
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
